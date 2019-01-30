@@ -1,0 +1,34 @@
+####MATH
+
+//Simple Math
+SELECT (1+1);
+SELECT (1+1),(9-3),(3*8),(10/2);
+
+//Rounding
+SELECT ROUND(2.5), ROUND(-2.5);
+
+//Absolute Value
+SELECT ABS(5);  
+
+//Select MAX price
+SELECT MAX(price) FROM products;
+
+//Select MIN price
+SELECT MIN(price) FROM products;
+
+//Get the average price
+SELECT AVG(price) FROM products;
+
+####SUBQUERIES
+
+//Simple Subquery
+SELECT (1+(SELECT 2+2))
+
+//Perform Subquery
+SELECT name,price FROM products WHERE price >(SELECT AVG(price) FROM products) ORDER BY price;
+
+//Get all treadmills
+SELECT id FROM products WHERE description LIKE "%Treadmill%";
+
+//Perform Subquery2 (and IN)
+SELECT name,MIN(price) FROM products WHERE id IN(SELECT id FROM products WHERE description LIKE "%Treadmill%");

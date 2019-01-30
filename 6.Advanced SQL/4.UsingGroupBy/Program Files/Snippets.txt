@@ -1,0 +1,29 @@
+####GROUP BY FUNCTION
+
+//Without GROUP BY Function
+SELECT customer, COUNT(*) AS "Number of Orders" FROM orders WHERE customer = 1
+
+//With GROUP BY Function
+SELECT customer, COUNT(*) AS "Number of Orders" FROM orders GROUP BY customer
+
+//Join customers table
+SELECT 
+orders.customer AS "Customer ID",
+customers.first_name AS "First Name",
+customers.last_name AS "Last Name",
+COUNT(*) AS "Number of Orders" 
+FROM orders 
+INNER JOIN customers
+ON orders.customer=customers.id
+GROUP BY customer
+
+//Valid SQL (add other columns to group by)
+SELECT 
+orders.customer AS "Customer ID",
+customers.first_name AS "First Name",
+customers.last_name AS "Last Name",
+COUNT(*) AS "Number of Orders" 
+FROM orders 
+INNER JOIN customers
+ON orders.customer=customers.id
+GROUP BY orders.customer,customers.first_name,customers.last_name

@@ -1,0 +1,90 @@
+//Insert Syntax 1
+INSERT INTO table_name
+VALUES (value1, value2, value3,...);
+
+//Insert Syntax 2
+INSERT INTO table_name (column1, column2, column3,...)
+VALUES (value1, value2, value3,...);
+
+//Single Inserts
+INSERT INTO product_categories (name, description, image)
+VALUES ("Fashion","The latest fashion products","images/fashion.jpg");
+
+INSERT INTO product_categories (name, description, image)
+VALUES ("Music","Instruments, albums, accessories","images/music.jpg");
+
+//Multiple Inserts
+INSERT INTO 
+product_categories (name,description,image) 
+VALUES 
+("Sporting Goods","Jerseys, equipment and more","images/sports.jpg"), 
+("Auto","Auto parts and accessories","images/auto.jpg"), 
+("Home & Garden","Products for your home","images/home.jpg");
+
+//Insert Multiple Products
+INSERT INTO products 
+(name,description,price,category,image)
+VALUES 
+("Surface Tablet","Microsoft Surface Pro with 128GB Memory","499.99",1,"images/surface.jpg"),
+("Nextbook Tablet","Nextbook 7 inch Tablet 8GB Memory","99.99",1,"images/nextbook.jpg"),
+("Philips BTM2180/37 Micro Music System","Wireless music streaming via Bluetooth","149.99",1,"images/stereo.jpg"),
+("Memorex Boombox","Memorex MP3142 - Boombox","45.99",1,"images/boombox.jpg"),
+("Mossy Oak Infinity Seat Cover","High quality, heavy Mossy Oak Infinity Seat Cover","19.99",6,"images/seatcover1.jpg"),
+("Remington Floor Mat Set","Remington Best Fashion Carpet Floor Mat Set Tan 4pc","29.99",1,"images/floormat1.jpg"),
+("Rawlings RBG36 Baseball Glove","Rawlings RBG36 Baseball Glove 12 inch","29.99",5,"images/glove1.jpg"),
+("Franklin Pro Batting Gloves","Franklin Sports MLB Shok-Sorb Pro Batting Glove Pair","19.99",5,"images/glove2.jpg"),
+("Golds Gym Trainer 420","NEW Gold's Gym Trainer 420 Treadmill with Bonus Puzzle Mat","377.00",5,"images/treadmill1.jpg"),
+("Weslo Cadence G 5.9 Treadmill","Weslo Cadence G 5.9 Treadmill","287.00",5,"images/treadmill2.jpg"),
+("Golds Gym Trainer 315 Treadmill","Gold's Gym Trainer 315 New Model Treadmill","258.00",5,"images/treadmill3.jpg");
+
+//Insert Multiple Customers
+INSERT INTO customers
+(first_name,last_name,email,password,avatar)
+VALUES 
+("Sandy","Williams","sandy@gmail.com","1234","images/sandy.jpg"),
+("Ben","Barro","ben@gmail.com","1234","images/ben.jpg"),
+("William","Terry","william@gmail.com","1234","images/william.jpg"),
+("Sarah","Thompson","sarah@gmail.com","1234","images/sarah.jpg"),
+("Donald","Duck","donald@gmail.com","1234","images/donald.jpg"),
+("Beth","McAdams","beth@gmail.com","1234","images/beth.jpg"),
+("Harry","Henderson","harry@gmail.com","1234","images/harry.jpg");
+
+//Insert Multiple Addresses
+INSERT INTO customer_addresses
+(customer,address,address2,city,state,zipcode)
+VALUES 
+(1,"10 Main st",NULL,"Boston","MA","01929"),
+(2,"20 Main st",Apt 3,"New York","NY","01929"),
+(3,"30 Main st",NULL,"Seaside Heights","NJ","01929"),
+(4,"40 Main st",Unit 10,"Baltimore","MD","01929"),
+(5,"50 Main st",Apt 18,"Miami","FL","01929"),
+(6,"60 Main st",NULL,"Chicago","IL","01929"),
+(7,"70 Main st",NULL,"Sacramento","CA","01929");
+
+//Insert Multiple Reviews
+INSERT INTO reviews
+(title,body,rating,customer,product)
+VALUES 
+("Great Product","This product was great",9,1,1),
+("Okay Product","This product was okay",6,1,2),
+("Decent Product","This product was decent",8,3,4),
+("Bad Product","This product was really bad",2,5,4);
+
+//Insert Multiple Page Categories
+INSERT INTO page_categories
+(name,description,image)
+VALUES 
+("Services","Service pages","images/services.jpg"),
+("Portfolio","Portfolio pages","images/portfolio.jpg"),
+("Company","Company pages","images/company.jpg");
+
+//Insert Multiple Pages
+INSERT INTO pages
+(title,body,category)
+VALUES 
+("About Us","This is the body for the about us page",3),
+("Our Work","This is the body for the our work page",2),
+("Testimonials","This is the body for the testimonials page",2);
+
+
+

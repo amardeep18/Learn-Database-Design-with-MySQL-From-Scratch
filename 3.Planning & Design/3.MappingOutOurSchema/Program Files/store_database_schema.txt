@@ -1,0 +1,53 @@
+PRODUCTS
+-id (INT(11), auto_increment, primary_key)
+-name (VARCHAR(100))
+-description (TEXT)
+-price (VARCHAR(20))
+-category (INT(11), foreign_key to products_categories id)
+-image (VARCHAR(100))
+
+PRODUCTS_CATEGORIES
+-id (INT(11), auto_increment, primary_key)
+-name (VARCHAR(100))
+-description (TEXT)
+-image (VARCHAR(100))
+
+CUSTOMERS
+-id (INT(11), auto_increment, primary_key)
+-first_name (VARCHAR(100))
+-last_name (VARCHAR(100))
+-email (VARCHAR(100))
+-password (VARCHAR(100))
+-avatar (VARCHAR(100))
+-join_date (TIMESTAMP, DEFAULT - current_date)
+
+CUSTOMER_ADDRESSES
+-id (INT(11), auto_increment, primary_key)
+-customer (INT(11), foreign_key to customers id)
+-address (VARCHAR(100))
+-address2 (VARCHAR(100))
+-city (VARCHAR(100))
+-state (VARCHAR(100))
+-zipcode (VARCHAR(100))
+
+REVIEWS
+-id (INT(11), auto_increment, primary_key)
+-title (VARCHAR(100))
+-body (TEXT)
+-rating INT(2)
+-customer (INT(11), foreign_key to customers id)
+-product (INT(11), foreign_key to products id)
+-review_date (TIMESTAMP, DEFAULT - current_date)
+
+PAGES
+-id (INT(11), auto_increment, primary_key)
+-title(VARCHAR(100))
+-body (TEXT)
+-category (INT(11), foreign_key to products id)
+-create_date (TIMESTAMP, DEFAULT - current_date)
+
+PAGE_CATEGORIES
+-id (INT(11), auto_increment, primary_key)
+-name (VARCHAR(100))
+-description (TEXT)
+-image (VARCHAR(100))

@@ -1,0 +1,14 @@
+//Update syntax
+UPDATE tablename SET field1=somevalue1, field2=somevalue2 WHERE columnname = somevalue;
+
+//Update single column
+Update products SET name="Microsoft Surface Tablet" WHERE id = 3;
+
+//Update name & email for user 1
+UPDATE customers SET first_name="John", last_name="Donovan", email="john@gmail.com" WHERE id=1;
+
+//Delete address
+DELETE FROM customer_addresses WHERE customer = 7;
+
+//Delete customer
+DELETE FROM customers WHERE id =7;

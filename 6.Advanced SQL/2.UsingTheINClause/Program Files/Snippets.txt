@@ -1,0 +1,21 @@
+####IN CLAUSE
+
+//Without IN Clause
+SELECT city,state FROM customer_addresses WHERE state = "MA" OR state = "MD" OR state = "FL" ORDER BY state
+
+//IN Query
+SELECT city,state FROM customer_addresses WHERE state IN("MA","MD","FL") ORDER BY state
+
+//NOT IN Query
+SELECT city,state FROM customer_addresses WHERE state NOT IN("MA","MD","FL") ORDER BY state
+
+//Join in customers table
+SELECT 
+customers.first_name AS "First Name",
+customers.last_name AS "Last Name",
+customer_addresses.city AS City,
+customer_addresses.state AS State
+FROM customer_addresses 
+INNER JOIN customers
+ON customer_addresses.customer=customers.id
+WHERE state IN("MA","MD","FL") ORDER BY state

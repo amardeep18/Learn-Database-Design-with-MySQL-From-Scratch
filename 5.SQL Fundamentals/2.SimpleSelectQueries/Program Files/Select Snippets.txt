@@ -1,0 +1,63 @@
+####SELECT SYNTAX
+
+//Select syntax with specific columns/fields
+SELECT field1,field2,field3 FROM tablename;
+
+//Select syntax with all columns/fields
+SELECT * FROM tablename;
+
+
+
+####SELECT QUERIES
+
+//Select all customers first and last names
+SELECT first_name, last_name FROM customers;
+
+//Select all customers
+SELECT * FROM customers
+
+
+
+####WHERE RESTRICTIONS
+
+//Select the customer with the ID of 3
+SELECT * FROM customers WHERE id = 3;
+
+//Select all customers with the first name "Beth"
+SELECT * FROM customers WHERE first_name = "Beth";
+
+//Select all products over 50 dollars
+SELECT * FROM products WHERE price > 50.00
+
+//Partial string match using LIKE
+SELECT * FROM products WHERE name LIKE 'micro%';
+
+//Select all customers with the last name williams
+SELECT * FROM customers WHERE last_name LIKE '%williams';
+
+//Select customers that have "william" anywhere in their name
+SELECT * FROM customers WHERE first_name LIKE '%william%';
+
+
+
+####USING OR & AND
+
+//Select all products in category 5 less than or equal to 29.99
+SELECT * FROM products WHERE category = '5' AND price >= 29.99;
+
+//Select all products in category 5 less than or equal to 29.99
+SELECT * FROM products WHERE category = '5' OR price >= 29.99;
+
+
+
+####DUAL VIRTUAL TABLE
+
+//Simple Math
+SELECT 5+3 FROM DUAL;
+
+//View Current Date/Time
+SELECT NOW() FROM DUAL;
+
+//When you dont specify a table, MySQL will assume you mean the DUAL table
+SELECT 3+4
+

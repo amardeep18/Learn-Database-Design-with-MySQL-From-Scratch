@@ -1,0 +1,46 @@
+####UNION
+
+//MySQL UNION operator allows you to combine two or more result sets from multiple tables into a single result set. 
+//The number of columns appears in the corresponding SELECT statements must be equal.
+//The columns appear in  the corresponding positions of each SELECT statement must have the same data type or 
+  at least convertible data type.
+  
+  
+SELECT city FROM customers
+UNION
+SELECT city FROM vendors
+ORDER BY city;
+
+SELECT city FROM customers
+UNION ALL
+SELECT city FROM vendors
+ORDER BY city;
+
+SELECT city, zipcode FROM customers
+WHERE zipcode='11111'
+UNION ALL
+SELECT city, zipcode FROM vendors
+WHERE zipcode='11111'
+ORDER BY city;
+
+
+
+####CONCAT
+
+SELECT id, CONCAT(first_name, ' - ', email) AS "Name & Email" FROM customers;
+
+SELECT id, CONCAT(name, ' - $', price) AS "Product & Price" FROM products;
+
+
+
+####COUNT
+
+SELECT COUNT(*) FROM products;
+
+SELECT COUNT(*) FROM products
+WHERE category = 1
+
+SELECT COUNT(*) FROM products
+WHERE category = 1 && price > 200
+
+SELECT COUNT(DISTINCT category) FROM products;

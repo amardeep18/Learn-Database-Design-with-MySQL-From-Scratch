@@ -1,0 +1,50 @@
+#### ALIASES
+
+SELECT first_name AS "First Name", last_name AS "Last Name"
+FROM customers;
+
+SELECT p.name, pc.name, p.price
+FROM product_categories AS pc, products AS p
+WHERE p.category=pc.id
+ORDER BY pc.name
+
+SELECT p.name as Product, pc.name as Category, p.price as Price
+FROM product_categories AS pc, products AS p
+WHERE p.category=pc.id
+ORDER BY pc.name
+
+####JOINS
+
+INNER JOIN: Returns all rows when there is at least one match in BOTH tables
+LEFT JOIN: Return all rows from the left table, and the matched rows from the right table
+RIGHT JOIN: Return all rows from the right table, and the matched rows from the left table
+FULL JOIN: Return all rows when there is a match in ONE of the tables
+
+
+SELECT customers.first_name, customers.last_name, customer_addresses.city,customer_addresses.state
+FROM customer_addresses
+INNER JOIN customers
+ON customer_addresses.customer=customers.id
+
+SELECT *
+FROM customers
+LEFT JOIN orders
+ON customers.id = orders.customer
+
+SELECT *
+FROM customers
+RIGHT JOIN orders
+ON customers.id = orders.customer
+
+
+SELECT c.first_name, c.last_name, p.name
+FROM customers c
+INNER JOIN orders o ON c.id = o.customer
+INNER JOIN products p ON o.product  = p.id 
+ORDER BY c.first_name
+
+SELECT c.first_name as FirstName, c.last_name as LastName, p.name as Product
+FROM customers c
+INNER JOIN orders o ON c.id = o.customer
+INNER JOIN products p ON o.product  = p.id 
+ORDER BY c.first_name
